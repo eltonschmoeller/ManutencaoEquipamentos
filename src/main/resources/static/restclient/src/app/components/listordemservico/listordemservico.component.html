@@ -1,0 +1,34 @@
+<div class="container">
+
+    <table class="table table-striped">
+        <thead>
+            <th>Id</th>
+            <th>Cliente</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Tipo Equipamento</th>
+            <th>Marca Equipamento</th>
+            <th>Descrição Problema</th>
+            <th>Status</th>
+            <th>Operations </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ordemServico of ordens">
+                <td>{{ordemServico.id}}</td>
+                <td>{{ordemServico.nomeCliente}}</td>
+                <td>{{ordemServico.enderecoCliente}}</td>
+                <td>{{ordemServico.telefoneCliente}}</td>
+                <td>{{ordemServico.emailCliente}}</td>
+                <td>{{ordemServico.tipoEquipamento}}</td>
+                <td>{{ordemServico.marcaEquipamento}}</td>
+                <td>{{ordemServico.descricaoProblema}}</td>
+                <td>{{ordemServico.statusOrdemServico}}</td>
+                <td><button class="btn btn-danger" (click)="deleteOrdemServico(ordemServico)">Delete</button>
+                    <button class="btn btn-primary" (click)="updateOrdemServico(ordemServico)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" (click)="newOrdemServico()">Nova Ordem de Serviço</button>
+</div>
